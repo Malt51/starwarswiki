@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 function Picture({ airtableData }) {
   // Mapping character names to image paths
   const characterImages = {
-    'Luke Skywalker': './image/Luke.png',
-    'Darth Vader': './image/Darth.jpg',
-    'Obi-Wan Kenobi': './image/obi.jpg',
-    'R2-D2': './image/r2.jpg',
-    'C-3PO': './image/c3.jpg',
-    'Leia Organa': './image/leia.jpg',
-    'Owen Lars': './image/lars.jpg',
-    'Biggs Darklighter': './image/biggs.jpg',
-    'Beru Whitesun lars': './image/beru.jpg',
-    'R5-D4': './image/r4.jpg'
+    'Luke Skywalker': './Image/Luke.png',
+    'Darth Vader': './Image/Darth.jpg',
+    'Obi-Wan Kenobi': './Image/obi.jpg',
+    'R2-D2': './Image/r2.jpg',
+    'C-3PO': './Image/c3.jpg',
+    'Leia Organa': './Image/leia.jpg',
+    'Owen Lars': './Image/lars.jpg',
+    'Biggs Darklighter': './Image/biggs.jpg',
+    'Beru Whitesun Lars': './Image/beru.jpg',
+    'R5-D4': './Image/r4.jpg'
   };
 
   return (
