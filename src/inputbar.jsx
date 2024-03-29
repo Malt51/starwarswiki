@@ -42,3 +42,19 @@ const InputBar = ({ onInputChange, airtableData }) => {
 };
 
 export default InputBar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
