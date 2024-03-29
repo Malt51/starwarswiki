@@ -1,31 +1,47 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import luke from './image/Luke.png';
+import Darth from './image/Darth.jpg';
+import obi from './image/obi.jpg';
+import r2 from './image/r2.jpg';
+import c3 from './image/c3.jpg';
+import leia from './image/leia.jpg';
+import lars from './image/lars.jpg';
+import biggs from './image/biggs.jpg';
+import beru from './image/beru.jpg';
+import r4 from './image/r4.jpg';
 
-function Picture({ airtableData }) {
-  // Mapping character names to image paths
-  const characterImages = {
-    'Luke Skywalker': './Image/Luke.png',
-    'Darth Vader': './Image/Darth.jpg',
-    'Obi-Wan Kenobi': './Image/obi.jpg',
-    'R2-D2': './Image/r2.jpg',
-    'C-3PO': './Image/c3.jpg',
-    'Leia Organa': './Image/leia.jpg',
-    'Owen Lars': './Image/lars.jpg',
-    'Biggs Darklighter': './Image/biggs.jpg',
-    'Beru Whitesun Lars': './Image/beru.jpg',
-    'R5-D4': './Image/r4.jpg'
-  };
-
+function Picture() {
   return (
     <div>
       <h1>Character Images</h1>
-      {airtableData.map((record, index) => (
-        <Link key={index} to={`/details/${record.fields.name}`}>
-          <img src={characterImages[record.fields.name]} alt={record.fields.name} />
-        </Link>
-      ))}
+      <Link to="/api">
+        <img src={luke} alt="Luke" />
+        <img src={Darth} alt="darth" />
+        <img src={obi} alt="Obi" />
+        <img src={r2} alt="R2" />
+        <img src={c3} alt="C3" />
+        <img src={leia} alt="Leia" />
+        <img src={lars} alt="Lars" />
+        <img src={beru} alt="BERU" />
+        <img src={biggs} alt="Biggs" />
+        <img src={r4} alt="R4" />
+        
+        
+
+
+        
+      </Link>
     </div>
   );
 }
 
 export default Picture;
+
+
+
+
+
+
+
+
