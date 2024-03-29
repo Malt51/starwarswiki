@@ -14,15 +14,15 @@ function App() {
   const [swapiData, setSwapiData] = useState([]);
   const [airtableData, setAirtableData] = useState([]);
   const handleInputChange = (inputValue) => {};
-  // const viteToken = import.meta.env.VITE_TOKEN
-  // console.log(viteToken)
+  const viteToken = import.meta.env.VITE_TOKEN
+  
 
   useEffect(() => {
     const fetchSwapiData = async () => {
       try {
         const response = await axios.get('https://swapi.dev/api/people/');
-        const viteToken = import.meta.env.VITE_TOKEN
-        console.log(viteToken)
+        
+        
         setSwapiData(response.data.results);
       } catch (error) {
         console.error('Error fetching SWAPI data:', error);
@@ -35,7 +35,7 @@ function App() {
   useEffect(() => {
     const postToAirtable = async (data) => {
       try {
-        const apiKey = `patdT2DOiLfyGLfnr.b2be40ce8565d03878aa5e2596a050b2adf9a781111768a782e9a45949f5b0df`;
+        const apiKey = viteToken;
         const airtableApiUrl = 'https://api.airtable.com/v0/app3BgHWINCCOy5Ww/tblbNY9NDwTiEsJ3u';
 
         const formattedData = data.map(person => ({
@@ -70,7 +70,7 @@ function App() {
   useEffect(() => {
     const fetchAirtableData = async () => {
       try {
-        const apiKey = 'patdT2DOiLfyGLfnr.b2be40ce8565d03878aa5e2596a050b2adf9a781111768a782e9a45949f5b0df';
+        const apiKey = viteToken;
         const airtableApiUrl = 'https://api.airtable.com/v0/app3BgHWINCCOy5Ww/tblbNY9NDwTiEsJ3u';
 
         const response = await axios.get(airtableApiUrl, {
@@ -106,7 +106,7 @@ function App() {
         <InputBar onInputChange={handleInputChange} airtableData={airtableData} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/api" element={<Api airtableData={airtableData} />} /> {/* Pass airtableData as a prop */}
+          <Route path="/api" element={<Api airtableData={airtableData} />} /> 
           <Route path="/picture" element={<Picture airtableData={airtableData} />} />
           <Route path="/details/:name" element={<DetailsPage airtableData={airtableData} />} />
         </Routes>
